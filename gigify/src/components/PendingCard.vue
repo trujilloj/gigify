@@ -28,7 +28,8 @@ export default {
   data() {
     return {
       REQUESTED_TEMPLATE: `https://pure-taiga-70535.herokuapp.com/events/${
-        this.pendingEvent.date}`,
+        this.pendingEvent.date
+      }`,
       PENDING_TEMPLATE: `https://whispering-plains-35500.herokuapp.com/events/${
         this.pendingEvent.date
       }`,
@@ -78,14 +79,18 @@ export default {
     },
     clearPending() {
       console.log(this.PENDING_TEMPLATE);
-    return fetch((this.PENDING_TEMPLATE), {
-      method: "delete"
-    }).then(resJSON => {
-      console.log(this.PENDING_TEMPLATE);
-      if (resJSON.status === 204)
-        console.log("Data, ", this.pendingEvent.date, " has been deleted...");
-      else console.log("Data, ", this.pendingEvent.date + " was unable to be deleted...");
-    });
+      return fetch(this.PENDING_TEMPLATE, {
+        method: "delete"
+      }).then(resJSON => {
+        console.log(this.PENDING_TEMPLATE);
+        if (resJSON.status === 204)
+          console.log("Data, ", this.pendingEvent.date, " has been deleted...");
+        else
+          console.log(
+            "Data, ",
+            this.pendingEvent.date + " was unable to be deleted..."
+          );
+      });
     }
   }
 };
@@ -106,5 +111,13 @@ export default {
 #card-background {
   background: #464444;
   box-shadow: 0px 1px 2px orange;
+}
+
+p {
+  margin: 3px;
+}
+
+.mainInfo {
+  margin: 15px;
 }
 </style>
