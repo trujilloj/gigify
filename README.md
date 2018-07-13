@@ -1,6 +1,6 @@
 # Livewire
 
-## ![](https://github.com/trujilloj/gigify/blob/master/gigify/public/livewire.gif)
+## ![](https://github.com/trujilloj/gigify/blob/master/gigify/public/Livewire.gif)
 
 ---
 
